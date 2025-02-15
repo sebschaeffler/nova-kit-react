@@ -7,7 +7,9 @@ import { priorities, statuses } from "../data/data";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { Input } from "@nova/components/ui/input/input";
 import { Button } from "@nova/components/ui/button/button";
-import { DataTableViewOptions } from "@nova/components/ui/table/tasks/components/data-table-view-options";
+import {
+  DataTableViewOptions,
+} from "@nova/components/ui/table/tasks/components/data-table-view-options";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;

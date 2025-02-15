@@ -5,120 +5,120 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 217 19% 27%;
-    --primary-foreground: 210 20% 98%;
-    --primary-hover: 221 39% 11%;
-    --primary-disabled: 216 12% 84%;
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 224 71.4% 4.1%;
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+        --primary: 217 19% 27%;
+        --primary-foreground: 210 20% 98%;
+        --primary-hover: 221 39% 11%;
+        --primary-disabled: 216 12% 84%;
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --secondary-hover: 221 39% 11%;
-    --secondary-hover-text: 240 100% 15%;
-    --secondary-disabled: 216 12% 84%;
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220.9 39.3% 11%;
+        --secondary-hover: 221 39% 11%;
+        --secondary-hover-text: 240 100% 15%;
+        --secondary-disabled: 216 12% 84%;
 
-    --destructive: 346 100% 44%;
-    --destructive-foreground: 210 20% 98%;
-    --destructive-hover: 346 100% 37%;
-    --destructive-hover-text: 0 0% 100%;
-    --destructive-disabled: 216 12% 84%;
+        --destructive: 346 100% 44%;
+        --destructive-foreground: 210 20% 98%;
+        --destructive-hover: 346 100% 37%;
+        --destructive-hover-text: 0 0% 100%;
+        --destructive-disabled: 216 12% 84%;
 
-    --success: 100 60% 50%;
-    --success-foreground: 210 20% 98%;
-    --success-hover: 100 60% 50%;
-    --success-hover-text: 0 0% 100%;
-    --success-disabled: 216 12% 84%;
+        --success: 100 60% 50%;
+        --success-foreground: 210 20% 98%;
+        --success-hover: 100 60% 50%;
+        --success-hover-text: 0 0% 100%;
+        --success-disabled: 216 12% 84%;
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 13% 91%;
-    --accent-foreground: 220.9 39.3% 11%;
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+        --accent: 220 13% 91%;
+        --accent-foreground: 220.9 39.3% 11%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
-    --radius: 0.3rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 224 71.4% 4.1%;
+        --radius: 0.3rem;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
 
-    /* Nova Kit custom vars */
-    --nova-main-background: #f3f4f6;
-    --nova-work-background: #ffffff;
+        /* Nova Kit custom vars */
+        --nova-main-background: #f3f4f6;
+        --nova-work-background: #ffffff;
 
-    --underline-link: 206 100% 30%;
-    --underline-link-hover: 206 100% 10%;
-  }
+        --underline-link: 206 100% 30%;
+        --underline-link-hover: 206 100% 10%;
+    }
 
-  .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+    .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+        --primary: 210 20% 98%;
+        --primary-foreground: 220.9 39.3% 11%;
+        --secondary: 215 27.9% 16.9%;
+        --secondary-foreground: 210 20% 98%;
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 216 12.2% 83.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
-  html,
-  body {
-    scroll-behavior: smooth;
-    font-family: "Public Sans", system-ui, sans-serif;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    background: var(--nova-main-background);
-  }
-
-  body.work {
-    background: var(--nova-work-background);
-  }
-
-  @keyframes checkAnimation {
-    0% {
-      transform: scale(0);
+    * {
+        @apply border-border;
     }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 
-  .animate-check {
-    animation: checkAnimation 0.3s ease-in-out;
-  }
+    html,
+    body {
+        scroll-behavior: smooth;
+        font-family: "Public Sans", system-ui, sans-serif;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        background: var(--nova-main-background);
+    }
+
+    body.work {
+        background: var(--nova-work-background);
+    }
+
+    @keyframes checkAnimation {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .animate-check {
+        animation: checkAnimation 0.3s ease-in-out;
+    }
 }

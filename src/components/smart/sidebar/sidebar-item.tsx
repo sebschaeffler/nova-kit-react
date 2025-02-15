@@ -12,10 +12,10 @@ import { NovaNavItem } from "@nova/components/common/navigation";
 import { usePathname } from "next/navigation";
 
 const SidebarItem = ({
-  index,
-  item,
-  mustPrefetchLink,
-}: {
+                       index,
+                       item,
+                       mustPrefetchLink,
+                     }: {
   item: NovaNavItem;
   index: number;
   mustPrefetchLink: boolean;
