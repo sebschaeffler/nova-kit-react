@@ -3,5 +3,8 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["next", "prettier"]
+  "extends": [
+    "next",
+    "prettier"
+  ]
 }

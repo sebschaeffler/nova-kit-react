@@ -9,11 +9,11 @@ import { buttonVariants } from "@nova/components/ui/button/button";
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}: CalendarProps) {
+                    className,
+                    classNames,
+                    showOutsideDays = true,
+                    ...props
+                  }: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}

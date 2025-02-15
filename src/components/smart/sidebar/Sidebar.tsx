@@ -17,10 +17,10 @@ export type NovaSidebarProps = {
 };
 
 const Sidebar = ({
-  navigationSections,
-  mustPrefetchLink = false,
-  children,
-}: NovaSidebarProps) => {
+                   navigationSections,
+                   mustPrefetchLink = false,
+                   children,
+                 }: NovaSidebarProps) => {
   const isOpen = true;
   // Guard
   if (!navigationSections?.length) {

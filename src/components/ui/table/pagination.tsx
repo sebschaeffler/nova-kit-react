@@ -38,11 +38,11 @@ type PaginationLinkProps = {
   React.ComponentProps<"a">;
 
 const PaginationLink = ({
-  className,
-  isActive,
-  size = "icon",
-  ...props
-}: PaginationLinkProps) => (
+                          className,
+                          isActive,
+                          size = "icon",
+                          ...props
+                        }: PaginationLinkProps) => (
   <a
     aria-current={isActive ? "page" : undefined}
     className={cn(
@@ -58,9 +58,9 @@ const PaginationLink = ({
 PaginationLink.displayName = "PaginationLink";
 
 const PaginationPrevious = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
+                              className,
+                              ...props
+                            }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
@@ -74,9 +74,9 @@ const PaginationPrevious = ({
 PaginationPrevious.displayName = "PaginationPrevious";
 
 const PaginationNext = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
+                          className,
+                          ...props
+                        }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to next page"
     size="default"

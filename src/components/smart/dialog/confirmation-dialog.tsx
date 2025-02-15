@@ -24,15 +24,15 @@ type ConfirmationDialogProps = {
 };
 
 function ConfirmationDialog({
-  trigger,
-  title,
-  description,
-  onConfirm,
-  confirmText = "Confirm",
-  cancelText = "Cancel",
-  variant = "destructive",
-  isFullWidth = true,
-}: ConfirmationDialogProps) {
+                              trigger,
+                              title,
+                              description,
+                              onConfirm,
+                              confirmText = "Confirm",
+                              cancelText = "Cancel",
+                              variant = "destructive",
+                              isFullWidth = true,
+                            }: ConfirmationDialogProps) {
   const [open, setOpen] = React.useState(false);
 
   const handleConfirm = (e: React.MouseEvent) => {

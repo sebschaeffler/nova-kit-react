@@ -29,7 +29,8 @@ class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <div className="flex min-h-screen flex-col items-center justify-center gap-4 p-[30px]">
+        <div
+          className="flex min-h-screen flex-col items-center justify-center gap-4 p-[30px]">
           <AlertCircle size={30} className="mb-4 text-red-500" />
           <h1>Internal Server Error.</h1>
         </div>

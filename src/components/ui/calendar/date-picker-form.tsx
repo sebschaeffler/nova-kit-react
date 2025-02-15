@@ -21,26 +21,26 @@ import { Input } from "@nova/components/ui/input/input";
 
 type Props = CalendarProps &
   DropdownProps & {
-    field: Partial<ControllerRenderProps>;
-    mode?: DaySelectionMode;
-    fieldClassName?: string;
-    dateFormat?: string;
-    placeholder?: string;
-    isFormDisabled?: boolean;
-  };
+  field: Partial<ControllerRenderProps>;
+  mode?: DaySelectionMode;
+  fieldClassName?: string;
+  dateFormat?: string;
+  placeholder?: string;
+  isFormDisabled?: boolean;
+};
 
 const DEFAULT_PLACEHOLDER = "Pick a date";
 const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
 
 const DatePickerForm: React.FC<Props> = ({
-  field,
-  mode = "single",
-  fieldClassName,
-  dateFormat = DEFAULT_DATE_FORMAT,
-  placeholder,
-  isFormDisabled = true,
-  ...props
-}) => {
+                                           field,
+                                           mode = "single",
+                                           fieldClassName,
+                                           dateFormat = DEFAULT_DATE_FORMAT,
+                                           placeholder,
+                                           isFormDisabled = true,
+                                           ...props
+                                         }) => {
   const [rangeDate, setRangeDate] = React.useState<DateRange | undefined>({
     from: new Date(),
     to: subDays(new Date(), 31),

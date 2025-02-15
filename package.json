@@ -1,8 +1,8 @@
 {
-  "name": "nova-kit",
+  "name": "@sebschaeffler/nova-kit",
   "description": "React library maintained by Sebastien Schaeffler.",
   "author": "Sebastien Schaeffler",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "type": "module",
