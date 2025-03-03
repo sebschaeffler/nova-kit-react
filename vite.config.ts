@@ -10,14 +10,29 @@ export default defineConfig({
       'jsxRuntime': 'classic'
     }),
     dts({
-      include: ['src/**/*'],
+      include: ['src/**/*']
     })
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
+    }
+  },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src', 'index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        components: resolve(__dirname, 'src/components/index.ts'),
+        lib: resolve(__dirname, 'src/lib/index.ts'),
+        hooks: resolve(__dirname, 'src/hooks/index.ts'),
+        utils: resolve(__dirname, 'src/utils/index.ts')
+      },
       formats: ['es', 'cjs'],
-      fileName: (ext) => `index.${ext}.js`,
+      // fileName: (ext) => `index.${ext}.js`,
+      fileName: (format, entryName) => {
+        const ext = format === 'es' ? 'es' : 'cjs';
+        return `${entryName}/index.${ext}.js`;
+      }
     },
     rollupOptions: {
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)], output: { preserveModules: true, exports: 'named' }
