@@ -13,7 +13,7 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsxdev",
+    "jsx": "react-jsx",
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "./dist",

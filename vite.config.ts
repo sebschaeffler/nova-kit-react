@@ -23,7 +23,6 @@ export default defineConfig({
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
         components: resolve(__dirname, 'src/components/index.ts'),
-        lib: resolve(__dirname, 'src/lib/index.ts'),
         hooks: resolve(__dirname, 'src/hooks/index.ts'),
         utils: resolve(__dirname, 'src/utils/index.ts')
       },

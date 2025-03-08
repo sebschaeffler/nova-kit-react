@@ -1,5 +1,5 @@
 import "./App.css";
-import "@sebschaeffler/nova-kit/nova-styles.css";
+import "nova-kit-react/nova-styles.css";
 import {
   Alert,
   AlertDescription,
@@ -17,7 +17,7 @@ import {
   Label,
   NovaError,
   Switch,
-} from "@sebschaeffler/nova-kit/components";
+} from "nova-kit-react/components";
 import { Terminal } from "lucide-react";
 import { useState } from "react";
 

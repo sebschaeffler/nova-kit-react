@@ -1,6 +1,6 @@
 "use client";
 
-import "@sebschaeffler/nova-kit/nova-styles.css";
+import "nova-kit-react/nova-styles.css";
 import {
   Alert,
   AlertDescription,
@@ -17,7 +17,7 @@ import {
   Button,
   Label,
   Switch,
-} from "@sebschaeffler/nova-kit/components";
+} from "nova-kit-react/components";
 import { Terminal } from "lucide-react";
 import { useState } from "react";
 
@@ -28,10 +28,10 @@ export default function App() {
     setMode(mode === "light" ? "dark" : "light");
   };
 
-  // const error: NovaError = {
-  //   code: 500,
-  //   message: "Internal ServerError Test",
-  // };
+  const error = {
+    code: 500,
+    message: "Internal ServerError Test",
+  };
 
   return (
     <div className={`flex align-center justify-start ${mode} flex-col h-[100vh]`}>
@@ -79,8 +79,7 @@ export default function App() {
           <Terminal className="h-4 w-4" />
           <AlertTitle>Heads up!</AlertTitle>
           <AlertDescription>
-            {/*Error: {error.message}*/}
-            Test
+            Error: {error.message}
           </AlertDescription>
         </Alert>
       </div>
