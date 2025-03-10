@@ -20,6 +20,7 @@ import {
 } from "nova-kit-react/components";
 import { Terminal } from "lucide-react";
 import { useState } from "react";
+import { HTTP_REQUEST_TYPE, NovaError, NovaHTTPRequest } from "nova-kit-react/lib";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -28,10 +29,12 @@ export default function App() {
     setMode(mode === "light" ? "dark" : "light");
   };
 
-  const error = {
+  const error: NovaError = {
     code: 500,
     message: "Internal ServerError Test",
   };
+
+  const request: NovaHTTPRequest = new NovaHTTPRequest().setRequestType(HTTP_REQUEST_TYPE.GET).setRequestEndpoint("https://jsonplaceholder.typicode.com/posts");
 
   return (
     <div className={`flex align-center justify-start ${mode} flex-col h-[100vh]`}>
@@ -79,7 +82,8 @@ export default function App() {
           <Terminal className="h-4 w-4" />
           <AlertTitle>Heads up!</AlertTitle>
           <AlertDescription>
-            Error: {error.message}
+            Error: {error.message} <br/>
+            Request endpoint: {request.getRequestEndpoint()}
           </AlertDescription>
         </Alert>
       </div>
