@@ -46,3 +46,6 @@ export * from "@/components/ui/calendar-constants";
 
 // Navigation
 export * from "@/components/navigation";
+
+// Smart
+export * from "@/components/smart";
