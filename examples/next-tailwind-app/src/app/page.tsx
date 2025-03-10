@@ -15,10 +15,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
+  ConfirmationDialog,
   Label,
   Switch,
 } from "nova-kit-react/components";
-import { Terminal } from "lucide-react";
+import { FlowerIcon, Terminal } from "lucide-react";
 import { useState } from "react";
 import { HTTP_REQUEST_TYPE, NovaError, NovaHTTPRequest } from "nova-kit-react/lib";
 
@@ -45,6 +46,18 @@ export default function App() {
         <Button onClick={toggleDarkMode}>Toggle Dark Mode</Button>
         <Button
           variant="destructive">Delete</Button>
+        <ConfirmationDialog
+          isFullWidth={false}
+          trigger={
+            <Button variant="ghost" className="flex gap-2" type="reset">
+              <FlowerIcon size={16} />
+            </Button>
+          }
+          title="Spread happiness to the rest of the world?"
+          description="This action will make you proud."
+          confirmText="Go"
+          onConfirm={() => console.log("Confirmed!")}
+        />
       </div>
 
       <div className="flex py-4 gap-4 items-center">
@@ -82,7 +95,7 @@ export default function App() {
           <Terminal className="h-4 w-4" />
           <AlertTitle>Heads up!</AlertTitle>
           <AlertDescription>
-            Error: {error.message} <br/>
+            Error: {error.message} <br />
             Request endpoint: {request.getRequestEndpoint()}
           </AlertDescription>
         </Alert>
