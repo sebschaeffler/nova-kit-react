@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - "master"
-      - "sebs/storybook"
 
 permissions:
   contents: read
