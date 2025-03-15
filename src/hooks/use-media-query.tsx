@@ -1,9 +1,9 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 export function useMediaQuery(query: string) {
-  const [value, setValue] = React.useState(false);
+  const [value, setValue] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     function onChange(event: MediaQueryListEvent) {
       setValue(event.matches);
     }
@@ -17,5 +17,3 @@ export function useMediaQuery(query: string) {
 
   return value;
 }
-
-export default useMediaQuery;
