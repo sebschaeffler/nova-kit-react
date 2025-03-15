@@ -1,8 +1,11 @@
 import type { Config } from "tailwindcss";
 
-export const config = {
+export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  safelist: [
+    "dark",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -13,20 +16,6 @@ export const config = {
       },
     },
     extend: {
-      screens: {
-        "catalogue-md": "970px",
-        "catalogue-lg": "1200px",
-        "catalogue-xl": "1600px",
-        "catalogue-2xl": "1940px",
-        "catalogue-wide-screen": "2560px",
-      },
-      lineClamp: {
-        8: "8",
-        9: "9",
-        10: "10",
-        11: "11",
-        12: "12",
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -104,7 +93,7 @@ export const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 } satisfies Config;
-
-export default config;
