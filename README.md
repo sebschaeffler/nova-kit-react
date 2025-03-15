@@ -1,19 +1,32 @@
-# shadcn-ui-lib-starter
-A simple starter kit to build your own shadcn-ui library using components from https://ui.shadcn.com/docs/components
+# NOVA Kit React - Component Library.
 
-### Features
-- Tree-shakeable (components you don't use won't be included in your bundle)
-- Dark mode support
-- Override library styles with your own using tailwindcss or your own css
+> This library is a collection of React UI Components and utility methods.
 
-### Wanna see how this library works ?
+Live documentation [here](https://sebschaeffler.github.io/nova-kit/).
 
-Run the example project and play around
+## 🪄 - Demo
 
-The example project has the published npm package linked so you do not really have to do a local npm link.
+Click **[here](./src/stories/demo/detail-page/form-demo.tsx)** to see an example for a typical **detail page** layout with a form, incl. validation.
 
-```
-cd examples/vite-tailwind-app
-npm install
-npm run dev
-```
+## ✨ - Components
+
+Browse the components [here](./src/components).
+
+## ✨ - Styles
+
+Based on Tailwind CSS [here](./src/nova-styles.css).
+
+## ⭐️ - Background story
+
+The name was inspired by the concept of a "nova" – a
+stellar explosion that signifies a powerful and luminous burst of energy against
+the dark backdrop of space. Just as a nova illuminates the cosmos, our library
+aims to shine a light on best practices, modern sleek components and shared
+layouts & utilities. <br />
+
+Nova is a React-based library. The concept of a "Supernova" – an even more powerful and transformative event - can transcend its initial form.
+In the future the transition from Nova Kit to Supernova Kit could mark a pivotal moment in our journey by introducing a technology-agnostic library that can be used across different platforms.
+
+
+---
+Built and maintained with ❤️ by Sebastien Schaeffler - 2024
