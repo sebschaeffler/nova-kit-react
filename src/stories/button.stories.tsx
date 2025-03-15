@@ -21,6 +21,7 @@ export const Default: Story = {
   args: {
     variant: "default",
     disabled: false,
+    children: "Click me!",
   },
 };
 
