@@ -1,4 +1,6 @@
-import { NovaQueryParameters } from "@/lib/middleware/request/model/nova-query-parameters";
+import {
+  NovaQueryParameters,
+} from "@/lib/middleware/request/model/nova-query-parameters";
 
 const endpoint = "/example/api/resource";
 

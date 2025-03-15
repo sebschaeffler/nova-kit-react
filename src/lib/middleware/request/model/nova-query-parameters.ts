@@ -6,7 +6,7 @@ const QUERY_STRING_SEPARATOR = "&";
 const QUERY_STRING_START = "?";
 
 export const LIMIT = "limit";
-export const DEFAULT_LIMIT: number = 50;
+export const DEFAULT_LIMIT = 50;
 
 export class NovaQueryParameters {
   [LIMIT]: number;
@@ -16,14 +16,14 @@ export class NovaQueryParameters {
   }
 
   static buildQueryString = ({
-    endpoint,
-    params,
-  }: {
+                               endpoint,
+                               params,
+                             }: {
     endpoint?: string;
     params?: { [_: string]: any } | undefined;
   }) => {
     if (!params) return endpoint;
-    let stringValueArray = [];
+    const stringValueArray: string[] = [];
     for (const [key, value] of Object.entries(params)) {
       if (value) {
         stringValueArray.push(`${key}=${value}`);

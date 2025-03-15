@@ -11,16 +11,16 @@ export type NovaAlertType = {
 
 type Props = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof Alert> & {
-    error?: NovaError | null | undefined;
-    novaAlert?: NovaAlertType;
-  };
+  error?: NovaError | null | undefined;
+  novaAlert?: NovaAlertType;
+};
 
 export const NovaAlert: React.FC<Props> = ({
-  error,
-  novaAlert,
-  variant = "default",
-  ...props
-}) => {
+                                             error,
+                                             novaAlert,
+                                             variant = "default",
+                                             ...props
+                                           }) => {
   const [isRendered, setIsRendered] = React.useState(true);
 
   // Render the alert if there is an error or novaAlert even if it was previously rendered
@@ -55,7 +55,8 @@ export const NovaAlert: React.FC<Props> = ({
   };
 
   return (
-    <div className="fixed bottom-[28px] left-1/2 z-50 w-full max-w-[850px] -translate-x-1/2 transform">
+    <div
+      className="fixed bottom-[28px] left-1/2 z-50 w-full max-w-[850px] -translate-x-1/2 transform">
       <Alert variant={variant} {...props} className="relative">
         <AlertCircle className="-mt-1" />
         <AlertTitle className="ml-2">

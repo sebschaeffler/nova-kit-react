@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import React, { ComponentProps } from "react";
 import { useTheme } from "next-themes";
 import { toast, Toaster as Sonner } from "sonner";
 import { cn } from "@/utils";
