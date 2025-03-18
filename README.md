@@ -2,7 +2,7 @@
 
 > This library is a collection of React UI Components and utility methods.
 
-Live documentation [here](https://sebschaeffler.github.io/nova-kit/).
+Live documentation: [https://sebschaeffler.github.io/nova-kit/](https://sebschaeffler.github.io/nova-kit-react/).
 
 ## 🪄 - Demo
 
