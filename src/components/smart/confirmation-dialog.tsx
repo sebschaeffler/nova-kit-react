@@ -21,6 +21,10 @@ type ConfirmationDialogProps = {
   confirmText?: string;
   cancelText?: string;
   variant?: VariantProps<typeof buttonVariants>["variant"];
+  descriptionClassName?: string;
+  titleClassName?: string;
+  cancelButtonClassName?: string;
+  confirmButtonClassName?: string;
   isFullWidth?: boolean;
 };
 
@@ -32,6 +36,10 @@ export function ConfirmationDialog({
                                      confirmText = "Confirm",
                                      cancelText = "Cancel",
                                      variant = "destructive",
+                                     descriptionClassName,
+                                     titleClassName,
+                                     cancelButtonClassName,
+                                     confirmButtonClassName,
                                      isFullWidth = true,
                                    }: ConfirmationDialogProps) {
   const [open, setOpen] = React.useState(false);
@@ -54,8 +62,9 @@ export function ConfirmationDialog({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>{description}</DialogDescription>
+          <DialogTitle className={titleClassName}>{title}</DialogTitle>
+          <DialogDescription
+            className={descriptionClassName}>{description}</DialogDescription>
         </DialogHeader>
         <DialogFooter>
           <Button
@@ -64,10 +73,12 @@ export function ConfirmationDialog({
               e.stopPropagation();
               setOpen(false);
             }}
+            className={cancelButtonClassName}
           >
             {cancelText}
           </Button>
-          <Button type="button" variant={variant} onClick={handleConfirm}>
+          <Button type="button" variant={variant} onClick={handleConfirm}
+                  className={confirmButtonClassName}>
             {confirmText}
           </Button>
         </DialogFooter>
