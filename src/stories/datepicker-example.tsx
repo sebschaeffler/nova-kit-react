@@ -44,7 +44,12 @@ export function DatePickerFormExample() {
 
   return (
     <Form {...form}>
-      <Label>Example of integration with React Hook Form</Label>
+      <div className="flex flex-col space-y-4 pb-4">
+        <Label className="text-red-600 animate-pulse">Datepicker needs to be integrated
+          within a
+          form</Label>
+        <Label>Example of integration with React Hook Form.</Label>
+      </div>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
