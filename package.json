@@ -1,7 +1,7 @@
 {
   "name": "nova-kit-react",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -12,7 +12,30 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sebschaeffler/nova-kit.git"
+    "url": "https://github.com/sebschaeffler/nova-kit-react.git"
+  },
+  "author": "Sebastien Schaeffler",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "storybook",
+    "ui-components",
+    "typescript",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/sebschaeffler/nova-kit-react#readme",
+  "bugs": {
+    "url": "https://github.com/sebschaeffler/nova-kit-react/issues"
+  },
+  "contributors": [
+    {
+      "name": "Sebastien Schaeffler",
+      "email": "sebastien@schaeffler.dev",
+      "url": "https://github.com/sebschaeffler"
+    }
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   },
   "exports": {
     ".": {
