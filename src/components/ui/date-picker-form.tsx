@@ -48,6 +48,11 @@ const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
  * @constructor
  */
 
+/**
+ * @deprecated This component is deprecated for range selection.
+ * Please use DatePickerRange instead.
+ */
+
 export const DatePickerForm: FC<Props> = ({
                                             field,
                                             mode = "single",
