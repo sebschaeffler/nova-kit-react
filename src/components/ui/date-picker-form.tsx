@@ -29,6 +29,30 @@ type Props = Partial<CalendarProps> &
 const DEFAULT_PLACEHOLDER = "Pick a date";
 const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
 
+/**
+ * IMPORTANT CONSIDERATION:
+ *
+ * This component has been tailored so that when a date range is selected, clicking on
+ * a new date will reset the current selection.
+ * As a side effect, this prevents the component from being programmatically reset.
+ *
+ * Consider using DatePickerRange instead if you need to reset the selection.
+ *
+ * @param field
+ * @param mode
+ * @param fieldClassName
+ * @param dateFormat
+ * @param placeholder
+ * @param isFormDisabled
+ * @param props
+ * @constructor
+ */
+
+/**
+ * @deprecated This component is deprecated for range selection.
+ * Please use DatePickerRange instead.
+ */
+
 export const DatePickerForm: FC<Props> = ({
                                             field,
                                             mode = "single",
@@ -44,7 +68,6 @@ export const DatePickerForm: FC<Props> = ({
   });
 
   const handleSelect: SelectRangeEventHandler = (nextRange, selectedDay) => {
-    // @ts-ignore
     setDateRange((range) => {
       if (range?.from && range?.to) return { from: selectedDay };
       return nextRange as DateRange;
@@ -67,7 +90,7 @@ export const DatePickerForm: FC<Props> = ({
       ? dateRange?.from || dateRange?.to
         ? (dateRange?.from ? format(dateRange.from, dateFormat) : "Select start date") +
         " - " +
-        (dateRange?.to ? format(dateRange?.to!, dateFormat) : "Select end date")
+        (dateRange?.to ? format(dateRange.to, dateFormat) : "Select end date")
         : DEFAULT_PLACEHOLDER_RANGE
       : field.value
         ? format(field.value, dateFormat)
@@ -76,8 +99,6 @@ export const DatePickerForm: FC<Props> = ({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        {/* FIXME - bring this back if required */}
-        {/*<FormControl>*/}
         {isFormDisabled ? (
           <Input value={valueToRender} readOnly className="text-left" />
         ) : (
@@ -96,7 +117,6 @@ export const DatePickerForm: FC<Props> = ({
             <CalendarRange size={20} className="ml-2 opacity-80" />
           </Button>
         )}
-        {/*</FormControl>*/}
       </PopoverTrigger>
       {!isFormDisabled && (
         <PopoverContent className="w-auto p-0" align="start">
@@ -104,7 +124,7 @@ export const DatePickerForm: FC<Props> = ({
             <Calendar
               mode="range"
               selected={dateRange}
-              // @ts-ignore
+              // @ts-ignore for some reasons TSC does not resolve this correctly
               onSelect={handleSelect}
               disabled={field.disabled}
               defaultMonth={dateRange?.from}
@@ -115,7 +135,7 @@ export const DatePickerForm: FC<Props> = ({
             <Calendar
               mode="single"
               selected={field.value}
-              // @ts-ignore
+              // @ts-ignore for some reasons TSC does not resolve this correctly
               onSelect={field.onChange}
               disabled={field.disabled}
               initialFocus
