@@ -8,13 +8,14 @@ import { CalendarIcon } from "lucide-react";
 export type DatePickerRangeProps = Omit<DayPickerRangeProps, "mode"> & {
   placeholder?: string;
   dateFormat?: string;
+  buttonProps?: React.ComponentProps<typeof Button>;
 };
 
 const DatePickerRange = ({
-  placeholder = "Pick a date",
-  dateFormat = "dd MMM YYY",
-  ...props
-}: DatePickerRangeProps) => {
+                           placeholder = "Pick a date",
+                           dateFormat = "dd MMM YYY",
+                           ...props
+                         }: DatePickerRangeProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -24,6 +25,7 @@ const DatePickerRange = ({
             "w-[240px] pl-3 text-left font-normal",
             !props.selected && "text-muted-foreground",
           )}
+          {...props.buttonProps}
         >
           {props.selected?.from && props.selected?.to ? (
             format(props.selected.from, dateFormat) +

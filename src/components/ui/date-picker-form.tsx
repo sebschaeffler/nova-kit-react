@@ -8,7 +8,12 @@ import { addDays, format, subDays } from "date-fns";
 import { ControllerRenderProps } from "react-hook-form";
 import { DEFAULT_INPUT_BORDER } from "@/components/ui/constants";
 import { DEFAULT_DATE_FORMAT } from "@/components/ui/calendar-constants";
-import { DateRange, DaySelectionMode, DropdownProps, SelectRangeEventHandler } from "react-day-picker";
+import {
+  DateRange,
+  DaySelectionMode,
+  DropdownProps,
+  SelectRangeEventHandler,
+} from "react-day-picker";
 import { Input } from "@/components/ui/input";
 
 type Props = Partial<CalendarProps> &
@@ -29,7 +34,7 @@ const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
  *
  * This component has been tailored so that when a date range is selected, clicking on
  * a new date will reset the current selection.
- * As a side effect, this prevents the component to be programmatically reset.
+ * As a side effect, this prevents the component from being programmatically reset.
  *
  * Consider using DatePickerRange instead if you need to reset the selection.
  *
@@ -58,7 +63,6 @@ export const DatePickerForm: FC<Props> = ({
   });
 
   const handleSelect: SelectRangeEventHandler = (nextRange, selectedDay) => {
-    // @ts-ignore
     setDateRange((range) => {
       if (range?.from && range?.to) return { from: selectedDay };
       return nextRange as DateRange;
@@ -81,7 +85,7 @@ export const DatePickerForm: FC<Props> = ({
       ? dateRange?.from || dateRange?.to
         ? (dateRange?.from ? format(dateRange.from, dateFormat) : "Select start date") +
         " - " +
-        (dateRange?.to ? format(dateRange?.to!, dateFormat) : "Select end date")
+        (dateRange?.to ? format(dateRange.to, dateFormat) : "Select end date")
         : DEFAULT_PLACEHOLDER_RANGE
       : field.value
         ? format(field.value, dateFormat)
@@ -115,7 +119,7 @@ export const DatePickerForm: FC<Props> = ({
             <Calendar
               mode="range"
               selected={dateRange}
-              // @ts-ignore
+              // @ts-ignore for some reasons TSC does not resolve this correctly
               onSelect={handleSelect}
               disabled={field.disabled}
               defaultMonth={dateRange?.from}
@@ -126,7 +130,7 @@ export const DatePickerForm: FC<Props> = ({
             <Calendar
               mode="single"
               selected={field.value}
-              // @ts-ignore
+              // @ts-ignore for some reasons TSC does not resolve this correctly
               onSelect={field.onChange}
               disabled={field.disabled}
               initialFocus

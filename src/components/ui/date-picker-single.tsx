@@ -8,6 +8,7 @@ import { CalendarIcon } from "lucide-react";
 export type DatePickerSingleProps = Omit<DayPickerSingleProps, "mode"> & {
   placeholder?: string;
   dateFormat?: string;
+  buttonProps?: React.ComponentProps<typeof Button>;
 };
 
 const DatePickerSingle = ({
@@ -24,6 +25,7 @@ const DatePickerSingle = ({
             "w-[240px] pl-3 text-left font-normal",
             !props.selected && "text-muted-foreground",
           )}
+          {...props.buttonProps}
         >
           {props.selected ? (
             format(props.selected, dateFormat)
