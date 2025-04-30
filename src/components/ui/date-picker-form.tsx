@@ -8,12 +8,7 @@ import { addDays, format, subDays } from "date-fns";
 import { ControllerRenderProps } from "react-hook-form";
 import { DEFAULT_INPUT_BORDER } from "@/components/ui/constants";
 import { DEFAULT_DATE_FORMAT } from "@/components/ui/calendar-constants";
-import {
-  DateRange,
-  DaySelectionMode,
-  DropdownProps,
-  SelectRangeEventHandler,
-} from "react-day-picker";
+import { DateRange, DaySelectionMode, DropdownProps, SelectRangeEventHandler } from "react-day-picker";
 import { Input } from "@/components/ui/input";
 
 type Props = Partial<CalendarProps> &
@@ -28,6 +23,25 @@ type Props = Partial<CalendarProps> &
 
 const DEFAULT_PLACEHOLDER = "Pick a date";
 const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
+
+/**
+ * IMPORTANT CONSIDERATION:
+ *
+ * This component has been tailored so that when a date range is selected, clicking on
+ * a new date will reset the current selection.
+ * As a side effect, this prevents the component to be programmatically reset.
+ *
+ * Consider using DatePickerRange instead if you need to reset the selection.
+ *
+ * @param field
+ * @param mode
+ * @param fieldClassName
+ * @param dateFormat
+ * @param placeholder
+ * @param isFormDisabled
+ * @param props
+ * @constructor
+ */
 
 export const DatePickerForm: FC<Props> = ({
                                             field,
@@ -76,8 +90,6 @@ export const DatePickerForm: FC<Props> = ({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        {/* FIXME - bring this back if required */}
-        {/*<FormControl>*/}
         {isFormDisabled ? (
           <Input value={valueToRender} readOnly className="text-left" />
         ) : (
@@ -96,7 +108,6 @@ export const DatePickerForm: FC<Props> = ({
             <CalendarRange size={20} className="ml-2 opacity-80" />
           </Button>
         )}
-        {/*</FormControl>*/}
       </PopoverTrigger>
       {!isFormDisabled && (
         <PopoverContent className="w-auto p-0" align="start">
