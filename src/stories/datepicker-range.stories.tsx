@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Toaster } from "@/components/ui/sonner";
 import DatePickerRange from "../components/ui/date-picker-range";
 import { DatePickerRangeExample } from "./datepicker-range-example";

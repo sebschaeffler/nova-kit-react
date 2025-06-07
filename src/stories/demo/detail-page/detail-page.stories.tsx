@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HandCoins, Package, Package2, ShoppingCart, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import React from "react";

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 
 import "../src/nova-styles.css";
 

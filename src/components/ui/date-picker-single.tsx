@@ -1,11 +1,18 @@
 import React from "react";
-import { Button, Calendar, Popover, PopoverContent, PopoverTrigger } from "@/components";
+import {
+  Button,
+  Calendar,
+  DEFAULT_DATE_FORMAT,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components";
 import { cn } from "@/utils";
 import { format } from "date-fns";
-import { DayPickerSingleProps } from "react-day-picker";
+import { PropsSingle } from "react-day-picker";
 import { CalendarIcon } from "lucide-react";
 
-export type DatePickerSingleProps = Omit<DayPickerSingleProps, "mode"> & {
+export type DatePickerSingleProps = Omit<PropsSingle, "mode"> & {
   placeholder?: string;
   dateFormat?: string;
   buttonProps?: React.ComponentProps<typeof Button>;
@@ -13,7 +20,7 @@ export type DatePickerSingleProps = Omit<DayPickerSingleProps, "mode"> & {
 
 const DatePickerSingle = ({
                             placeholder = "Pick a date",
-                            dateFormat = "dd MMM YYY",
+                            dateFormat = DEFAULT_DATE_FORMAT,
                             ...props
                           }: DatePickerSingleProps) => {
   return (
@@ -36,7 +43,11 @@ const DatePickerSingle = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
-        <Calendar mode="single" {...props} />
+        <Calendar
+          mode="single"
+          className="rounded-md border shadow-sm"
+          captionLayout="dropdown"
+          {...props} />
       </PopoverContent>
     </Popover>
   );
