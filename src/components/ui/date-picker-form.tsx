@@ -10,16 +10,17 @@ import { DEFAULT_INPUT_BORDER } from "@/components/ui/constants";
 import { DEFAULT_DATE_FORMAT } from "@/components/ui/calendar-constants";
 import {
   DateRange,
-  DaySelectionMode,
   DropdownProps,
+  Mode,
   SelectRangeEventHandler,
 } from "react-day-picker";
 import { Input } from "@/components/ui/input";
+import { OnSelectHandler } from "react-day-picker/dist/cjs/types/props";
 
 type Props = Partial<CalendarProps> &
   Partial<DropdownProps> & {
   field: Partial<ControllerRenderProps>;
-  mode?: DaySelectionMode;
+  mode?: Mode;
   fieldClassName?: string;
   dateFormat?: string;
   placeholder?: string;
@@ -48,11 +49,6 @@ const DEFAULT_PLACEHOLDER_RANGE = "Pick a date range";
  * @constructor
  */
 
-/**
- * @deprecated This component is deprecated for range selection.
- * Please use DatePickerRange instead.
- */
-
 export const DatePickerForm: FC<Props> = ({
                                             field,
                                             mode = "single",
@@ -67,7 +63,7 @@ export const DatePickerForm: FC<Props> = ({
     to: field.value?.to,
   });
 
-  const handleSelect: SelectRangeEventHandler = (nextRange, selectedDay) => {
+  const handleRangeSelect: SelectRangeEventHandler = (nextRange, selectedDay) => {
     setDateRange((range) => {
       if (range?.from && range?.to) return { from: selectedDay };
       return nextRange as DateRange;
@@ -123,22 +119,24 @@ export const DatePickerForm: FC<Props> = ({
           {mode === "range" ? (
             <Calendar
               mode="range"
+              // @ts-ignore for some reasons TSC does not resolve this correctly
               selected={dateRange}
               // @ts-ignore for some reasons TSC does not resolve this correctly
-              onSelect={handleSelect}
+              onSelect={handleRangeSelect}
               disabled={field.disabled}
               defaultMonth={dateRange?.from}
-              initialFocus
+              autoFocus
               {...props}
             />
           ) : (
             <Calendar
               mode="single"
-              selected={field.value}
               // @ts-ignore for some reasons TSC does not resolve this correctly
-              onSelect={field.onChange}
+              selected={field.value as Date | undefined}
+              // @ts-ignore for some reasons TSC does not resolve this correctly
+              onSelect={field.onChange as OnSelectHandler<Date>}
               disabled={field.disabled}
-              initialFocus
+              autoFocus
               {...props}
             />
           )}
