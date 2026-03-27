@@ -33,9 +33,9 @@ pnpm add nova-kit-react
 
 Before using nova-kit-react, make sure your project meets the following requirements:
 
-- React: ^18.0.0
+- React: ^19.0.0
 - Node.js: >= 20 recommended
-- Tailwind CSS: Strongly recommended for styling
+- Tailwind CSS: v4+ — Strongly recommended for styling
 
 ➤ [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation)
 
@@ -120,4 +120,4 @@ In the future the transition from Nova Kit to Supernova Kit could mark a pivotal
 
 
 ---
-Built and maintained with ❤️ by Sebastien Schaeffler - 2024
+Built and maintained by Sebastien Schaeffler - 2024

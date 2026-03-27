@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import tailwindcss from "@tailwindcss/vite";
 
 const config: StorybookConfig = {
   "stories": [
@@ -22,6 +23,12 @@ const config: StorybookConfig = {
   "typescript": {
     "check": false,
     reactDocgen: "react-docgen-typescript",
+  },
+
+  async viteFinal(config: Record<string, any>) {
+    config.plugins = config.plugins || [];
+    config.plugins.push(tailwindcss());
+    return config;
   },
 };
 export default config;

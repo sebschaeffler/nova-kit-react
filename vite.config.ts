@@ -3,12 +3,14 @@ import { resolve } from "path";
 import { dependencies, peerDependencies } from "./package.json";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
     react({
       "jsxRuntime": "automatic",
     }),
+    tailwindcss(),
     dts({
       include: ["src/**/*"],
     }),

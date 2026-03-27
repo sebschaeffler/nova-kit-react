@@ -1,6 +1,6 @@
 // "use client"
 
-import { Cross2Icon } from "@radix-ui/react-icons";
+import { XIcon } from "lucide-react";
 import { Table } from "@tanstack/react-table";
 
 import { priorities, statuses } from "../data/data";
@@ -48,7 +48,7 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
             className="h-8 px-2 lg:px-3"
           >
             Reset
-            <Cross2Icon className="ml-2 h-4 w-4" />
+            <XIcon className="ml-2 h-4 w-4" />
           </Button>
         )}
       </div>
