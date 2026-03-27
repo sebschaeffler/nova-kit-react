@@ -34,6 +34,9 @@
     "./src"
   ],
   "exclude": [
-    "src/stories"
+    "src/stories",
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ]
 }

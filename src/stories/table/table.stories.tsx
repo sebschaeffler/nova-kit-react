@@ -69,29 +69,29 @@ export const AdvancedTable: Story = {
   render: () => <TableExample />,
 };
 
-export const MoreAdvancedTable: Story = {
-  args: {},
-  render: () => (
-    <>
-      <div className="md:hidden">
-        <image
-          src="/examples/tasks-light.png"
-          width={1280}
-          height={998}
-          alt="Playground"
-          className="block dark:hidden"
-        />
-        <image
-          src="/examples/tasks-dark.png"
-          width={1280}
-          height={998}
-          alt="Playground"
-          className="hidden dark:block"
-        />
-      </div>
-      <div className="hidden w-full h-full flex-1 flex-col space-y-8 p-8 md:flex">
-        <DataTable data={tasks} columns={columns} />
-      </div>
-    </>
-  ),
-};
+// export const MoreAdvancedTable: Story = {
+//   args: {},
+//   render: () => (
+//     <>
+//       <div className="md:hidden">
+//         <image
+//           src="/examples/tasks-light.png"
+//           width={1280}
+//           height={998}
+//           alt="Playground"
+//           className="block dark:hidden"
+//         />
+//         <image
+//           src="/examples/tasks-dark.png"
+//           width={1280}
+//           height={998}
+//           alt="Playground"
+//           className="hidden dark:block"
+//         />
+//       </div>
+//       <div className="hidden w-full h-full flex-1 flex-col space-y-8 p-8 md:flex">
+//         <DataTable data={tasks} columns={columns} />
+//       </div>
+//     </>
+//   ),
+// };

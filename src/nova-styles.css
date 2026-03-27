@@ -1,124 +1,236 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-@layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 224 71.4% 4.1%;
-        --card: 0 0% 100%;
-        --card-foreground: 224 71.4% 4.1%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 224 71.4% 4.1%;
-        --primary: 217 19% 27%;
-        --primary-foreground: 210 20% 98%;
-        --primary-hover: 221 39% 11%;
-        --primary-disabled: 216 12% 84%;
+@custom-variant dark (&:is(.dark *));
 
-        --secondary: 220 14.3% 95.9%;
-        --secondary-foreground: 220.9 39.3% 11%;
-        --secondary-hover: 221 39% 11%;
-        --secondary-hover-text: 240 100% 15%;
-        --secondary-disabled: 216 12% 84%;
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-        --destructive: 346 100% 44%;
-        --destructive-foreground: 210 20% 98%;
-        --destructive-hover: 346 100% 37%;
-        --destructive-hover-text: 0 0% 100%;
-        --destructive-disabled: 216 12% 84%;
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-hover: hsl(var(--primary-hover));
+  --color-primary-disabled: hsl(var(--primary-disabled));
 
-        --success: 100 60% 50%;
-        --success-foreground: 210 20% 98%;
-        --success-hover: 100 60% 50%;
-        --success-hover-text: 0 0% 100%;
-        --success-disabled: 216 12% 84%;
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-hover: hsl(var(--secondary-hover));
+  --color-secondary-hoverText: hsl(var(--secondary-hover-text));
+  --color-secondary-disabled: hsl(var(--secondary-disabled));
 
-        --muted: 220 14.3% 95.9%;
-        --muted-foreground: 220 8.9% 46.1%;
-        --accent: 220 13% 91%;
-        --accent-foreground: 220.9 39.3% 11%;
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-hover: hsl(var(--destructive-hover));
+  --color-destructive-hoverText: hsl(var(--destructive-hover-text));
+  --color-destructive-disabled: hsl(var(--destructive-disabled));
 
-        --border: 220 13% 91%;
-        --input: 220 13% 91%;
-        --ring: 224 71.4% 4.1%;
-        --radius: 0.3rem;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-success-hover: hsl(var(--success-hover));
+  --color-success-hoverText: hsl(var(--success-hover-text));
+  --color-success-disabled: hsl(var(--success-disabled));
 
-        /* Nova Kit custom vars */
-        --nova-main-background: #f3f4f6;
-        --nova-work-background: #ffffff;
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-        --underline-link: 206 100% 30%;
-        --underline-link-hover: 206 100% 10%;
-    }
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 
-    .dark {
-        --background: 224 71.4% 4.1%;
-        --foreground: 210 20% 98%;
-        --card: 224 71.4% 4.1%;
-        --card-foreground: 210 20% 98%;
-        --popover: 224 71.4% 4.1%;
-        --popover-foreground: 210 20% 98%;
-        --primary: 210 20% 98%;
-        --primary-foreground: 220.9 39.3% 11%;
-        --secondary: 215 27.9% 16.9%;
-        --secondary-foreground: 210 20% 98%;
-        --muted: 215 27.9% 16.9%;
-        --muted-foreground: 217.9 10.6% 64.9%;
-        --accent: 215 27.9% 16.9%;
-        --accent-foreground: 210 20% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 20% 98%;
-        --border: 215 27.9% 16.9%;
-        --input: 215 27.9% 16.9%;
-        --ring: 216 12.2% 83.9%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Nova custom colors */
+  --color-underline-link: hsl(var(--underline-link));
+  --color-underline-link-hover: hsl(var(--underline-link-hover));
+
+  /* Sidebar */
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 217 19% 27%;
+    --primary-foreground: 210 20% 98%;
+    --primary-hover: 221 39% 11%;
+    --primary-disabled: 216 12% 84%;
 
-    html,
-    body {
-        scroll-behavior: smooth;
-        font-family: "Public Sans", system-ui, sans-serif;
-    }
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --secondary-hover: 221 39% 11%;
+    --secondary-hover-text: 240 100% 15%;
+    --secondary-disabled: 216 12% 84%;
 
-    body {
-        @apply bg-background text-foreground;
-        background: var(--nova-main-background);
-    }
+    --destructive: 346 100% 44%;
+    --destructive-foreground: 210 20% 98%;
+    --destructive-hover: 346 100% 37%;
+    --destructive-hover-text: 0 0% 100%;
+    --destructive-disabled: 216 12% 84%;
 
-    body.work {
-        background: var(--nova-work-background);
-    }
+    --success: 100 60% 50%;
+    --success-foreground: 210 20% 98%;
+    --success-hover: 100 60% 50%;
+    --success-hover-text: 0 0% 100%;
+    --success-disabled: 216 12% 84%;
 
-    @keyframes checkAnimation {
-        0% {
-            transform: scale(0);
-        }
-        50% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 13% 91%;
+    --accent-foreground: 220.9 39.3% 11%;
 
-    .animate-check {
-        animation: checkAnimation 0.3s ease-in-out;
-    }
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.3rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar */
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Nova Kit custom vars */
+    --nova-main-background: #f3f4f6;
+    --nova-work-background: #ffffff;
+
+    --underline-link: 206 100% 30%;
+    --underline-link-hover: 206 100% 10%;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar dark */
+    --sidebar: 224 71.4% 4.1%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 210 20% 98%;
+    --sidebar-primary-foreground: 220.9 39.3% 11%;
+    --sidebar-accent: 215 27.9% 16.9%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 27.9% 16.9%;
+    --sidebar-ring: 216 12.2% 83.9%;
+  }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    font-family: "Public Sans", system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--nova-main-background);
+  }
+
+  body.work {
+    background: var(--nova-work-background);
+  }
+
+  @keyframes checkAnimation {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-check {
+    animation: checkAnimation 0.3s ease-in-out;
+  }
+}
+
+

@@ -1,5 +1,4 @@
 import { defineConfig } from "tsup";
-import { execSync } from "child_process";
 
 export default defineConfig({
   entry: {
@@ -18,7 +17,4 @@ export default defineConfig({
   }),
   // Exclude form folder from build
   external: ["@/form/*", "@/form"],
-  onSuccess: () => {
-    execSync("cp tailwind.config.ts dist/");
-  },
 });

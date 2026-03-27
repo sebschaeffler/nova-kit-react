@@ -1,7 +1,6 @@
 // "use client"
 
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { MixerHorizontalIcon } from "@radix-ui/react-icons";
+import { SlidersHorizontalIcon } from "lucide-react";
 import { Table } from "@tanstack/react-table";
 import {
   DropdownMenu,
@@ -9,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +21,7 @@ export function DataTableViewOptions<TData>({ table }: DataTableViewOptionsProps
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className="ml-auto hidden h-8 lg:flex">
-          <MixerHorizontalIcon className="mr-2 h-4 w-4" />
+          <SlidersHorizontalIcon className="mr-2 h-4 w-4" />
           View
         </Button>
       </DropdownMenuTrigger>

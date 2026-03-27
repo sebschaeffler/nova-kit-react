@@ -2,9 +2,8 @@
  * Imported from Nova Kit.
  */
 
-import type { UseQueryOptions, UseQueryResult } from "@tanstack/react-query";
+import type { UseQueryOptions, UseQueryResult, DefaultError, QueryClient, QueryKey } from "@tanstack/react-query";
 import { useQuery } from "@tanstack/react-query";
-import type { DefaultError, QueryClient, QueryKey } from "@tanstack/query-core";
 
 export interface NovaQueryOptions<
   TQueryFnData,
