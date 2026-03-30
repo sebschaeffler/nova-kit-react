@@ -1,19 +1,19 @@
 import * as React from "react"
-import { HoverCard as HoverCardPrimitive } from "radix-ui"
+import { PreviewCard as PreviewCardPrimitive } from "@base-ui/react"
 
 import { cn } from "@/utils/index"
 
 function HoverCard({
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
-  return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
+}: PreviewCardPrimitive.Root.Props) {
+  return <PreviewCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
 function HoverCardTrigger({
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
+}: PreviewCardPrimitive.Trigger.Props) {
   return (
-    <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
+    <PreviewCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
   )
 }
 
@@ -21,21 +21,23 @@ function HoverCardContent({
   className,
   align = "center",
   sideOffset = 4,
+  side,
   ...props
-}: React.ComponentProps<typeof HoverCardPrimitive.Content>) {
+}: PreviewCardPrimitive.Popup.Props &
+  Pick<PreviewCardPrimitive.Positioner.Props, "side" | "align" | "sideOffset">) {
   return (
-    <HoverCardPrimitive.Portal data-slot="hover-card-portal">
-      <HoverCardPrimitive.Content
-        data-slot="hover-card-content"
-        align={align}
-        sideOffset={sideOffset}
-        className={cn(
-          "z-50 w-64 origin-(--radix-hover-card-content-transform-origin) rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
-          className
-        )}
-        {...props}
-      />
-    </HoverCardPrimitive.Portal>
+    <PreviewCardPrimitive.Portal data-slot="hover-card-portal">
+      <PreviewCardPrimitive.Positioner side={side} align={align} sideOffset={sideOffset}>
+        <PreviewCardPrimitive.Popup
+          data-slot="hover-card-content"
+          className={cn(
+            "z-50 w-64 origin-(--transform-origin) rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[ending-style]:animate-out data-[ending-style]:fade-out-0 data-[ending-style]:zoom-out-95 data-[starting-style]:animate-in data-[starting-style]:fade-in-0 data-[starting-style]:zoom-in-95",
+            className
+          )}
+          {...props}
+        />
+      </PreviewCardPrimitive.Positioner>
+    </PreviewCardPrimitive.Portal>
   )
 }
 

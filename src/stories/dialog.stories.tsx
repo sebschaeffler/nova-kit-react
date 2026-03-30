@@ -50,8 +50,8 @@ export const CustomCloseButton: Story = {
   args: {},
   render: () => (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Share</Button>
+      <DialogTrigger render={<Button variant="outline" />}>
+        Share
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -73,10 +73,8 @@ export const CustomCloseButton: Story = {
           </Button>
         </div>
         <DialogFooter className="sm:justify-start">
-          <DialogClose asChild>
-            <Button type="button">
+          <DialogClose render={<Button type="button" />}>
               Close
-            </Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

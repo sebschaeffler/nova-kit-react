@@ -19,7 +19,6 @@ export const Default: Story = {
   args: {
     size: "lg",
     variant: "default",
-    type: "single",
     children: (
       <>
         <ToggleGroupItem value="a">Fruits</ToggleGroupItem>

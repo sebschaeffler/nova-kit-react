@@ -28,9 +28,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open Sheet</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open Sheet</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
@@ -53,9 +51,7 @@ export const Default: Story = {
           </div>
         </div>
         <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
+          <SheetClose render={<Button type="submit" />}>Save changes</SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -65,9 +61,7 @@ export const Default: Story = {
 export const LeftSide: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open Left Sheet</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open Left Sheet</SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
           <SheetTitle>Navigation</SheetTitle>
@@ -88,9 +82,7 @@ export const LeftSide: Story = {
 export const TopSide: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open Top Sheet</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open Top Sheet</SheetTrigger>
       <SheetContent side="top">
         <SheetHeader>
           <SheetTitle>Notification</SheetTitle>
@@ -106,9 +98,7 @@ export const TopSide: Story = {
 export const BottomSide: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open Bottom Sheet</Button>
-      </SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open Bottom Sheet</SheetTrigger>
       <SheetContent side="bottom">
         <SheetHeader>
           <SheetTitle>Cookie Settings</SheetTitle>
@@ -120,4 +110,3 @@ export const BottomSide: Story = {
     </Sheet>
   ),
 };
-
