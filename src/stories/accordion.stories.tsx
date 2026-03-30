@@ -23,11 +23,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    type: "multiple",
+    multiple: true,
     disabled: false,
   },
   render: () => (
-    <Accordion type="multiple">
+    <Accordion multiple>
       <AccordionItem value="item-1">
         <AccordionTrigger style={{ minWidth: "450px" }}>Is it
           accessible?</AccordionTrigger>

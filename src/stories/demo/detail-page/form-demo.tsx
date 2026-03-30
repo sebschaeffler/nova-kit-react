@@ -299,7 +299,7 @@ function AppearanceTab({
           {ACCENT_COLORS.map((color) => (
             <TooltipProvider key={color.value}>
               <Tooltip>
-                <TooltipTrigger asChild>
+                <TooltipTrigger render={
                   <Label
                     htmlFor={`color-${color.value}`}
                     className={cn(
@@ -308,7 +308,8 @@ function AppearanceTab({
                         ? "border-foreground scale-110"
                         : "border-transparent hover:scale-105",
                     )}
-                  >
+                  />
+                }>
                     <RadioGroupItem
                       id={`color-${color.value}`}
                       value={color.value}
@@ -318,7 +319,6 @@ function AppearanceTab({
                     {accent === color.value && (
                       <Check className="absolute size-4 text-white drop-shadow-md" />
                     )}
-                  </Label>
                 </TooltipTrigger>
                 <TooltipContent>{color.name}</TooltipContent>
               </Tooltip>
@@ -545,15 +545,15 @@ const FormDemo = () => {
             </div>
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger asChild>
+                <TooltipTrigger render={
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={() => setIsDark((prev) => !prev)}
                     className="rounded-full"
-                  >
+                  />
+                }>
                     {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
-                  </Button>
                 </TooltipTrigger>
                 <TooltipContent>
                   {isDark ? "Switch to light mode" : "Switch to dark mode"}

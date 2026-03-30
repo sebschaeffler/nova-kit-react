@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Slider as SliderPrimitive } from "radix-ui"
+import { Slider as SliderPrimitive } from "@base-ui/react"
 
 import { cn } from "@/utils/index"
 
@@ -10,7 +10,7 @@ function Slider({
   min = 0,
   max = 100,
   ...props
-}: React.ComponentProps<typeof SliderPrimitive.Root>) {
+}: SliderPrimitive.Root.Props) {
   const _values = React.useMemo(
     () =>
       Array.isArray(value)
@@ -34,19 +34,21 @@ function Slider({
       )}
       {...props}
     >
-      <SliderPrimitive.Track
-        data-slot="slider-track"
-        className={cn(
-          "relative grow overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5"
-        )}
-      >
-        <SliderPrimitive.Range
-          data-slot="slider-range"
+      <SliderPrimitive.Control data-slot="slider-control">
+        <SliderPrimitive.Track
+          data-slot="slider-track"
           className={cn(
-            "absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+            "relative grow overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5"
           )}
-        />
-      </SliderPrimitive.Track>
+        >
+          <SliderPrimitive.Indicator
+            data-slot="slider-range"
+            className={cn(
+              "absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+            )}
+          />
+        </SliderPrimitive.Track>
+      </SliderPrimitive.Control>
       {Array.from({ length: _values.length }, (_, index) => (
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
