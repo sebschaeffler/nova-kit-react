@@ -1,6 +1,6 @@
 # NOVA Kit React - Component Library
 
-[![npm version](https://img.shields.io/npm/v/nova-kit-react.svg)](https://www.npmjs.com/package/@sebschaeffler/nova-kit)
+[![npm version](https://img.shields.io/npm/v/nova-kit-react.svg)](https://www.npmjs.com/package/nova-kit-react)
 [![npm downloads](https://img.shields.io/npm/dm/nova-kit-react.svg)](https://www.npmjs.com/package/nova-kit-react)
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -120,4 +120,4 @@ In the future the transition from Nova Kit to Supernova Kit could mark a pivotal
 
 
 ---
-Built and maintained by Sebastien Schaeffler - 2024
+Built and maintained by Sebastien Schaeffler - 2025
