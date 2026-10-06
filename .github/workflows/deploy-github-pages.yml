@@ -1,8 +1,6 @@
-# Workflow name
 name: Build and Publish Storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
   push:
     branches:
       - "main"
@@ -12,28 +10,37 @@ permissions:
   pages: write
   id-token: write
 
-# List of jobs
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Job steps
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # Manual Checkout
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      # Set up Node
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      # Install pnpm
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
         with:
           version: 10
-      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+
+      - uses: actions/setup-node@v7
         with:
-          install_command: pnpm install --frozen-lockfile
-          build_command: pnpm build-storybook
+          node-version: "24"
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build-storybook
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
           path: storybook-static
-          checkout: false
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
