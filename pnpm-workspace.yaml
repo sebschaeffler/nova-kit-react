@@ -1,2 +1,6 @@
 allowBuilds:
   esbuild: false
+
+overrides:
+  # GHSA esbuild dev server file read, fixed in 0.28.1; transitive via tsup/vite/storybook
+  esbuild: ">=0.28.1"
