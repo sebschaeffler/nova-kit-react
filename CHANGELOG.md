@@ -23,6 +23,7 @@
 
 - Storybook 10, Vite 8, TypeScript 6, ESLint 10 (with React Compiler lint rules), Faker 10, postcss-cli 12
 - Developing the library now requires Node.js 22+
+- Security: resolved Dependabot alerts (patched example apps, removed stale `package-lock.json`, `esbuild` >= 0.28.1 override)
 
 ---
 
