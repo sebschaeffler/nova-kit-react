@@ -9,9 +9,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import TableExample from "./table-example";
-import tasks from "./tasks/data/tasks.json";
-import { columns } from "./tasks/components/columns";
-import { DataTable } from "./tasks/components/data-table";
 
 const meta = {
   title: "[02] Components/Table",

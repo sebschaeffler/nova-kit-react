@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Command,
@@ -27,19 +26,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
   render: () => (
-    // @ts-ignore
     <Command className="w-[350px]">
-      {/* @ts-ignore*/}
       <CommandInput placeholder="Type a command or search..." />
-      {/* @ts-ignore*/}
       <CommandList>
-        {/* @ts-ignore*/}
         <CommandEmpty>No results found.</CommandEmpty>
-        {/* @ts-ignore*/}
         <CommandGroup heading="Suggestions">
-          {/* @ts-ignore*/}
           <CommandItem>Calendar pro & personal</CommandItem>
-          {/* @ts-ignore*/}
           <CommandItem>Notes & pictures</CommandItem>
           <CommandItem>Whiteboard</CommandItem>
         </CommandGroup>

@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import React from "react";
@@ -340,7 +339,7 @@ function AppearanceTab({
             Adjust the base font size for the interface.
           </p>
         </div>
-        <Select value={fontSize} onValueChange={setFontSize}>
+        <Select value={fontSize} onValueChange={(v) => setFontSize(v ?? "")}>
           <SelectTrigger className="w-50">
             <SelectValue />
           </SelectTrigger>
@@ -459,7 +458,7 @@ function NotificationsTab() {
             How often would you like to receive notification digests?
           </p>
         </div>
-        <Select value={frequency} onValueChange={setFrequency} disabled={!emailNotifs}>
+        <Select value={frequency} onValueChange={(v) => setFrequency(v ?? "")} disabled={!emailNotifs}>
           <SelectTrigger className="w-50">
             <SelectValue />
           </SelectTrigger>

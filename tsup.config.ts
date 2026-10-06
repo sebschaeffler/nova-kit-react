@@ -13,7 +13,7 @@ export default defineConfig({
   clean: true,
   outDir: "dist",
   outExtension: ({ format }) => ({
-    js: format === "esm" ? ".es.js" : ".cjs.js",
+    js: format === "esm" ? ".es.js" : ".cjs",
   }),
   // Exclude form folder from build
   external: ["@/form/*", "@/form"],

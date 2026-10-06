@@ -14,8 +14,7 @@ export const filterNil = (object: any) => {
       v === undefined
     ) {
       if (Array.isArray(object)) {
-        // @ts-ignore
-        object.splice(k, 1);
+        object.splice(Number(k), 1);
       } else {
         delete object[k];
       }

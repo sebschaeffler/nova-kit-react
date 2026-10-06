@@ -1,6 +1,19 @@
 # nova-kit-react
 
-## 1.1.0 (2025-03-31)
+## 1.1.1 (2026-10-06)
+
+### Fixes
+
+- Fixed CommonJS consumers: `require("nova-kit-react")` (and subpath entries) returned an empty module because CJS output used a `.cjs.js` extension in an ESM (`"type": "module"`) package. CJS builds now ship as `.cjs` with matching `.d.cts` types.
+
+### Maintenance
+
+- Updated all dependencies to their latest compatible minor/patch versions (no major upgrades)
+- Migrated ESLint to the flat config format (`eslint.config.js`); `pnpm lint` works again
+
+---
+
+## 1.1.0 (2026-03-30)
 
 ### Features & Improvements
 

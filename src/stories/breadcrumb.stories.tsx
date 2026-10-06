@@ -97,9 +97,10 @@ export const Separator: Story = {
 // -------------------------------------
 
 const StatefulBreadcrumbWrapper = ({
-                                     // @ts-ignore
                                      children,
-                                   }) => {
+                                   }: {
+  children: (open: boolean, setOpen: (open: boolean) => void) => React.ReactNode;
+}) => {
   const [open, setOpen] = React.useState(false);
 
   // Pass state and setState to children
