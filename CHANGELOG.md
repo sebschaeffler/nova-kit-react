@@ -1,5 +1,31 @@
 # nova-kit-react
 
+## 2.0.0 (2026-10-06)
+
+### Breaking Changes
+
+- **`react-day-picker` upgraded to v10.** `Calendar` forwards DayPicker props, so the props removed in v10 are no longer accepted:
+  - `fromDate` / `toDate` → `hidden={{ before: date }}` / `hidden={{ after: date }}` (optionally with `startMonth` / `endMonth`)
+  - `fromMonth` / `toMonth` → `startMonth` / `endMonth`
+  - `fromYear` / `toYear` → `startMonth={new Date(year, 0)}` / `endMonth={new Date(year, 11)}`
+  - `initialFocus` → `autoFocus`
+  - `classNames` keys: `table` → `month_grid`, `nav_button` → `button_previous` / `button_next`, `day_selected` → `selected`
+  - See the [DayPicker v10 upgrade guide](https://daypicker.dev/upgrading).
+- **Removed unused runtime dependencies:** `uuid`, `date-fns`, `zod` and `@hookform/resolvers` are no longer installed with the library. If your app imports them, add them to your own `package.json`.
+
+### Changes
+
+- `lucide-react` upgraded to v1. Icons rendered by components now set `aria-hidden` by default.
+- `useMediaQuery` and `useIsMobile` now use `useSyncExternalStore`: they return the correct value on the first client render (still `false` during SSR).
+- `Carousel` now also unsubscribes its `reInit` listener on cleanup.
+
+### Maintenance
+
+- Storybook 10, Vite 8, TypeScript 6, ESLint 10 (with React Compiler lint rules), Faker 10, postcss-cli 12
+- Developing the library now requires Node.js 22+
+
+---
+
 ## 1.1.1 (2026-10-06)
 
 ### Fixes

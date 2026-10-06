@@ -9,7 +9,8 @@ export default defineConfig({
     "utils": "src/utils/index.ts",
   },
   format: ["esm", "cjs"],
-  dts: true,
+  // tsup injects the deprecated `baseUrl` option when generating declarations.
+  dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
   clean: true,
   outDir: "dist",
   outExtension: ({ format }) => ({

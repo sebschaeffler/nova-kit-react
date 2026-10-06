@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import { dependencies, peerDependencies } from "./package.json";
+import pkg from "./package.json" with { type: "json" };
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import tailwindcss from "@tailwindcss/vite";
@@ -17,16 +17,16 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
+      "@": resolve(import.meta.dirname, "src"),
     },
   },
   build: {
     lib: {
       entry: {
-        index: resolve(__dirname, "src/index.ts"),
-        components: resolve(__dirname, "src/components/index.ts"),
-        hooks: resolve(__dirname, "src/hooks/index.ts"),
-        utils: resolve(__dirname, "src/utils/index.ts"),
+        index: resolve(import.meta.dirname, "src/index.ts"),
+        components: resolve(import.meta.dirname, "src/components/index.ts"),
+        hooks: resolve(import.meta.dirname, "src/hooks/index.ts"),
+        utils: resolve(import.meta.dirname, "src/utils/index.ts"),
       },
       formats: ["es", "cjs"],
       // fileName: (ext) => `index.${ext}.js`,
@@ -36,7 +36,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
+      external: [...Object.keys(pkg.peerDependencies), ...Object.keys(pkg.dependencies)],
       output: { preserveModules: true, exports: "named" },
     },
 
